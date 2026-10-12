@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript This Keyword</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2ff;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 25px;
+            max-width: 420px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px;
+            width: 80%;
+        }
+
+        button {
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            color: #3730a3;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>JavaScript This Keyword</h2>
+
+        <input type="text" id="studentName" placeholder="Enter student name">
+
+        <br>
+
+        <input type="number" id="studentAge" placeholder="Enter student age">
+
+        <br>
+
+        <button onclick="showStudent()">Show Details</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function showStudent() {
+
+            const student = {
+                name: document.getElementById("studentName").value,
+                age: document.getElementById("studentAge").value,
+
+                displayDetails: function () {
+                    return "Student Name: " + this.name +
+                        "<br>Student Age: " + this.age;
+                }
+            };
+
+            document.getElementById("result").innerHTML =
+                student.displayDetails();
+        }
+    </script>
+
+</body>
+
+</html>
